@@ -77,8 +77,8 @@ class LinuxAdapter implements SystemAPI {
 
 /** Adaptee — simulated raw Windows Win32 calls. */
 class WindowsAPI {
-    public String GetSystemInfo() {
-        System.out.println("[WindowsAPI] invoking GetSystemInfo()");
+    public String getSystemInfo() {
+        System.out.println("[WindowsAPI] invoking getSystemInfo()");
         return "Windows 11 Pro 23H2 x64";
     }
 
@@ -92,8 +92,8 @@ class WindowsAPI {
         return "Processes: 254, CPU user time: 42%";
     }
 
-    public String GetDiskFreeSpace() {
-        System.out.println("[WindowsAPI] invoking GetDiskFreeSpace()");
+    public String getFreeDiskSpace() {
+        System.out.println("[WindowsAPI] invoking getFreeDiskSpace()");
         return "C:\\ 1 TB total, 412 GB free, 60% used";
     }
 }
@@ -107,7 +107,7 @@ class WindowsAdapter implements SystemAPI {
     }
 
     public String getSystemData() {
-        return "System: " + windows.GetSystemInfo();
+        return "System: " + windows.getSystemInfo();
     }
 
     public String getMemoryUsage() {
@@ -119,7 +119,7 @@ class WindowsAdapter implements SystemAPI {
     }
 
     public String getDiskUsage() {
-        return "Disk: " + windows.GetDiskFreeSpace();
+        return "Disk: " + windows.getFreeDiskSpace();
     }
 }
 
